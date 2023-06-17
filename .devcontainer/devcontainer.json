@@ -1,0 +1,56 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "runArgs": [
+        "--platform=linux/amd64"
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-python.mypy-type-checker",
+                "eamodio.gitlens",
+                "GitHub.vscode-pull-request-github",
+                "yzhang.markdown-all-in-one",
+                "usernamehw.errorlens",
+                "aaron-bond.better-comments",
+                "GitHub.github-vscode-theme"
+            ],
+            "settings": {
+                "gitlens.showWhatsNewAfterUpgrades": false,
+                "gitlens.showWelcomeOnInstall": false,
+                "python.linting.enabled": true,
+                "python.linting.pycodestyleEnabled": true,
+                "python.linting.pydocstyleEnabled": true,
+                "python.linting.pydocstyleArgs": [
+                    "--convention=pep257"
+                ],
+                "python.linting.mypyEnabled": true,
+                "python.linting.mypyArgs": [
+                    "--follow-imports=silent",
+                    "--ignore-missing-imports",
+                    "--show-column-numbers",
+                    "--disallow-untyped-defs",
+                    "--no-pretty",
+                    "--strict"
+                ],
+                "workbench.colorTheme": "Default Dark Modern",
+                "editor.wordWrap": "on",
+                "editor.fontSize": 16,
+                "editor.formatOnSave": true,
+                "editor.formatOnSaveMode": "modificationsIfAvailable",
+                "editor.formatOnType": true
+            }
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {}
+    },
+    "postCreateCommand": "python3 -m pip install -r requirements.txt",
+    "postStartCommand": "bash -c git remote set-url origin 'https://github.com/OnslowCollege/$(basename $(pwd))'",
+    "forwardPorts": [
+        6080
+    ]
+}
