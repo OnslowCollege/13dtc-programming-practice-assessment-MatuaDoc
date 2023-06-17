@@ -1,0 +1,29 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "settings": { 
+        "python.linting.enabled": true,
+        "python.linting.pycodestyleEnabled": true,
+        "python.linting.pydocstyleEnabled": true,
+        "python.linting.pydocstyleArgs": ["--ignore=D400"],
+        "python.linting.mypyEnabled": true
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "eamodio.gitlens",
+                "GitHub.vscode-pull-request-github",
+                "yzhang.markdown-all-in-one",
+                "usernamehw.errorlens",
+                "aaron-bond.better-comments"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {}
+    },
+    "onCreateCommand": "sudo apt -y update && sudo apt -y install libegl1 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0",
+    "postCreateCommand": "python3 -m pip install -r requirements.txt",
+    "forwardPorts": [6080]
+}

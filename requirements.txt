@@ -1,0 +1,5 @@
+pycodestyle
+pydocstyle
+mypy
+pytest
+pyside6
